@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import RSVPForm from '../components/RSVPForm';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSVP</title>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1>RSVP</h1>
+        <p class="tagline">Please confirm your attendance.</p>
+      </header>
+      <section class="form-section">
+        <RSVPForm client:load />
+      </section>
+      <footer class="footer">
+        <a href="/admin">Admin</a>
+      </footer>
+    </main>
+  </body>
+</html>

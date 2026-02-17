@@ -1,0 +1,20 @@
+---
+description: Inline annotations for evolving project standards
+alwaysApply: true
+---
+
+# Rule Update System
+
+Use inline annotations to manage the evolution of this project's standards.
+
+| Annotation | When to use |
+|------------|-------------|
+| `// RULE-CANDIDATE: [description]` | Pattern repeats 3+ times. |
+| `// RULE-QUESTION: [id]` | A rule feels outdated or hinders speed. |
+| `// RULE-VIOLATION: [id] Reason: [text] Expires: [date]` | Intentional technical debt. |
+
+Example:
+```ts
+// RULE-VIOLATION: RULE-001 Reason: Legacy API returns untyped JSON. Expires: 2025-06-01
+const data = response as Record<string, unknown>;
+```

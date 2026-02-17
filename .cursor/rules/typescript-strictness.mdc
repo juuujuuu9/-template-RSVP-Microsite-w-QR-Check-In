@@ -1,0 +1,25 @@
+---
+description: TypeScript strictness (RULE-001)
+globs: "**/*.ts,**/*.tsx"
+alwaysApply: false
+---
+
+# RULE-001: TypeScript Strictness
+
+Critical — must not violate.
+
+- **No `any`.** Use `unknown` and narrow, or define proper types.
+- **No `@ts-ignore`** without a `REASON:` comment on the same or next line.
+- **Explicit return types** for all exported functions.
+
+```ts
+// ❌ BAD
+export function getItem(id: string) {
+  return store.get(id);
+}
+
+// ✅ GOOD
+export function getItem(id: string): Item | undefined {
+  return store.get(id);
+}
+```
